@@ -65,6 +65,8 @@ def interpolate(d0,d1,weight):
 
 def perlin(x,y):
     """This function is used to calculate perlin noise in two-dimensional (x, y) coordinates."""
+
+    """Grid coordinates, rounded to nearest integer"""
     x0 = int(x)
     y0 = int(y)
     x1 = x0 + 1
@@ -73,11 +75,13 @@ def perlin(x,y):
     wx = x - x0
     wy = y - y0
 
+    """This block of code gets the values from the perm array for the four corners of the cell that contains point (x, y)."""
     valtopr = perm[perm[x1]+y1]
     valtopl = perm[perm[x0]+y1]
     valbotr = perm[perm[x1]+y0]
     valbotl = perm[perm[x0]+y0]
 
+    """Calculates the product of the distance between points (x0, y0) and (x, y) and the gradient."""
     d0 = dist_grad_prod(x0, y0, x, y,valbotl)
     d1 = dist_grad_prod(x1, y0, x, y,valbotr)
     ix0 = interpolate(d0, d1, wx)
