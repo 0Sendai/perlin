@@ -21,13 +21,12 @@ def shuffle(array):
         e -= 1
 
 def makeperm():
-    """This code implements the makeperm function,
-       which creates and returns a permutation list."""
+    """This code creates and returns a permutation list."""
     perm = []
-    for i in range(0,256):
+    for i in range(0,7400):
         perm.append(i)
     shuffle(perm)
-    for i in range(0,256):
+    for i in range(0,7400):
         perm.append(perm[i])
     return perm
 
