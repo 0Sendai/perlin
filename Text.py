@@ -2,7 +2,7 @@ import dearpygui.dearpygui as dpg
 import array
 import test_perlin as perlin
 
-"""Creating a working field"""
+"""This code creates a workspace."""
 dpg.create_context()
 
 grid_size = 100
@@ -13,11 +13,7 @@ octav = 5
 
 def perlin():
     """This code is used to generate Perlin noise on a 2D mesh
-       with dimensions width and height. Each point (x, y) in
-       the grid calculates a noise value and uses it to determine
-       the brightness of the pixel's color. The resulting values
-       are stored in the raw_data array, which will
-       be used to create an image or other noise visualization."""
+       with dimensions width and height. """
     for x in range(0,width):
         for y in range(0,heigth):
 
@@ -38,9 +34,7 @@ def perlin():
             raw_data[index+1] = val
             rawdata[index+2] = val
 
-""""This code is used to create a texture based
-    on the generated Perlin noise and register
-    it using the dpg library."""
+""""This code is used to create a texture."""
 perlin()
 raw_data = array.array('f', raw_data)
 
@@ -49,9 +43,7 @@ with dpg.texture_registry():
 
 
 
-"""This code is used to create a window displaying
-   the generated Perlin noise and display it in the
-   user interface using the Dear PyGui library."""
+"""This code is used to create a window and display Perlin noise to the user interface."""
 with dpg.window(label="perlin"):
     dpg.add_image("texture_tag")
 
