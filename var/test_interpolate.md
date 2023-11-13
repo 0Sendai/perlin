@@ -1,7 +1,7 @@
-
+```
 def interpolate(d0,d1,weight):
     return (d1-d0) * (3.0 - weight * 2.0) * weight * weight + d0
-
+```
 '''
 Тестовые случаи
 1)
