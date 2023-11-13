@@ -26,8 +26,8 @@
 
 [Описание функций](var/functions.md)
 
-[Тесты №1](test_functions.md)
+[Тесты №1](var/test_functions.md)
 
-[Тесты №2](test_interpolate.md)
+[Тесты №2](var/test_interpolate.md)
 
 (Презентация "Шум Перлина.pdf")
